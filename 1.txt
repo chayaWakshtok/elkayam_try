@@ -4,3 +4,347 @@ git config --global http.sslVerify false
 1211
 
 
+
+git init
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam
+$ git init
+Initialized empty Git repository in D:/elkayam/.git/
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git add .
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git commit -m "first commit"
+[master (root-commit) 7f35fc5] first commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 1.txt
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git remote add origin https://github.com/chayaWakshtok/elkayam_try.git
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 72.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/chayaWakshtok/elkayam_try.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git add .
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git commit "secend"
+error: pathspec 'secend' did not match any file(s) known to git
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git commit -m "secend"
+[master 0c06a16] secend
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 267 bytes | 267.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/chayaWakshtok/elkayam_try.git
+   7f35fc5..0c06a16  master -> master
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git add .
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git commit -m "third"
+[master bee01c3] third
+ 1 file changed, 2 insertions(+)
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git checkout dev
+error: pathspec 'dev' did not match any file(s) known to git
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git push^C
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git push -u dev
+fatal: 'dev' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git branch
+* master
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git checkout
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git add .
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git commit -m "third"
+On branch dev
+nothing to commit, working tree clean
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ ^C
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git push --set-upstream origin dev
+
+To https://github.com/chayaWakshtok/elkayam_try.git
+ ! [rejected]        dev -> dev (fetch first)
+error: failed to push some refs to 'https://github.com/chayaWakshtok/elkayam_try.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/chayaWakshtok/elkayam_try
+ * [new branch]      dev        -> origin/dev
+   0c06a16..4d8e322  master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev
+
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git push --set-upstream origin dev
+To https://github.com/chayaWakshtok/elkayam_try.git
+ ! [rejected]        dev -> dev (non-fast-forward)
+error: failed to push some refs to 'https://github.com/chayaWakshtok/elkayam_try.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git push
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ ^C
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$  git push --set-upstream origin dev
+
+To https://github.com/chayaWakshtok/elkayam_try.git
+ ! [rejected]        dev -> dev (non-fast-forward)
+error: failed to push some refs to 'https://github.com/chayaWakshtok/elkayam_try.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git branch
+  dev
+* master
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git checkout -b dev2
+Switched to a new branch 'dev2'
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git branch
+  dev
+* dev2
+  master
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> dev2
+
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ ^C
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git branch --set-upstream-to=origin/<branch> dev2
+bash: branch: No such file or directory
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git push
+fatal: The current branch dev2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev2
+
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ ^C
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git push --set-upstream origin dev2
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 267 bytes | 133.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'dev2' on GitHub by visiting:
+remote:      https://github.com/chayaWakshtok/elkayam_try/pull/new/dev2
+remote:
+To https://github.com/chayaWakshtok/elkayam_try.git
+ * [new branch]      dev2 -> dev2
+Branch 'dev2' set up to track remote branch 'dev2' from 'origin'.
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git log
+commit bee01c3fa20ae4ffdb04a68b4b8ccf99b0ab0f77 (HEAD -> dev2, origin/dev2, master, dev)
+Author: chayawacsstock <chaya.wacsstock@brandcust.co.il>
+Date:   Sun May 31 01:53:24 2020 +0300
+
+    third
+
+commit 0c06a163daf7717dc08ae67a902fcf484879ff99
+Author: chayawacsstock <chaya.wacsstock@brandcust.co.il>
+Date:   Sun May 31 01:47:41 2020 +0300
+
+    secend
+
+commit 7f35fc52e05ecc1a57015adb59dee9a4da34e58a
+Author: chayawacsstock <chaya.wacsstock@brandcust.co.il>
+Date:   Sun May 31 01:46:38 2020 +0300
+
+    first commit
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git reset --hard ^C
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git reset --hard 0c06a163daf7717dc08ae67a902fcf484879ff99
+HEAD is now at 0c06a16 secend
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git add .
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git commit -m "4"
+[dev2 21de8ef] 4
+ 1 file changed, 1 insertion(+)
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (dev2)
+$ git checkout master
+Switched to branch 'master'
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From https://github.com/chayaWakshtok/elkayam_try
+   4d8e322..6f82a5a  master     -> origin/master
+Updating bee01c3..6f82a5a
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git add .
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git commit -m "5"
+[master d14acee] 5
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git merge dev2
+Auto-merging 1.txt
+CONFLICT (content): Merge conflict in 1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master|MERGING)
+$ git add .
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master|MERGING)
+$ git commit -m "6"
+[master 514f25f] 6
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$ git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 794 bytes | 198.00 KiB/s, done.
+Total 9 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/chayaWakshtok/elkayam_try.git
+   6f82a5a..514f25f  master -> master
+
+user@DESKTOP-6U5LVM0 MINGW64 /d/elkayam (master)
+$
+
+https://backlog.com/git-tutorial/branching/resolve-merge-conflict/
